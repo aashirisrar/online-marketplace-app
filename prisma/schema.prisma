@@ -1,0 +1,67 @@
+// schema.prisma
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model User {
+  id       String  @id @unique @default(cuid())
+  name     String? @unique
+  email    String  @unique
+  password String?
+  phone    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  firstName      String?
+  lastName       String?
+  bio            String?
+  profilePicture String? @default("/user.png")
+
+  active Boolean @default(false)
+
+  books Book[]
+
+  Session       Session[]
+  ActivateToken ActivateToken[]
+}
+
+model ActivateToken {
+  id          Int       @id @default(autoincrement())
+  token       String    @unique
+  createdAt   DateTime  @default(now())
+  activatedAt DateTime?
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Book {
+  bookId    String   @id @unique @default(cuid())
+  title     String
+  details   String
+  image     String
+  createdAt DateTime @default(now())
+  price     Int      @default(0)
+  isSold    Boolean  @default(false)
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

@@ -27,7 +27,7 @@ model User {
 
   active Boolean @default(false)
 
-  books Book[]
+  ads Ad[]
 
   Session       Session[]
   ActivateToken ActivateToken[]
@@ -53,8 +53,8 @@ model Session {
   updatedAt DateTime @updatedAt
 }
 
-model Book {
-  bookId    String   @id @unique @default(cuid())
+model Ad {
+  adId      String   @id @unique @default(cuid())
   title     String
   details   String
   image     String

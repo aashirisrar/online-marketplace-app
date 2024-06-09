@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import {
-    Book,
     CircleUser,
     Menu,
     Search,
+    Store,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -66,8 +66,8 @@ const NavbarDashboard = () => {
                             href="/"
                             className="flex items-center gap-2 text-lg font-semibold mb-2"
                         >
-                            <Book className="h-6 w-6" />
-                            <span className="sr-only">Booker Inc</span>
+                            <Store className="h-6 w-6" />
+                            <span className="sr-only">Seller Inc</span>
                         </Link>
                         {routes.map((route) => (
                             <Link

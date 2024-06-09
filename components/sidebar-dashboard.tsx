@@ -3,7 +3,7 @@
 import Link from "next/link";
 import {
     Bell,
-    Book,
+    Store,
     Home,
     PanelTop,
 } from "lucide-react";
@@ -20,7 +20,7 @@ export const routes = [
         href: "/home",
     },
     {
-        label: "Your Books",
+        label: "Your Ads",
         icon: PanelTop,
         href: "/user",
     },
@@ -34,8 +34,8 @@ const SidebarDashboard = () => {
         <div className="flex h-full max-h-screen flex-col gap-2">
             <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
                 <Link href="/" className="flex items-center gap-2 font-semibold">
-                    <Book className="h-6 w-6" />
-                    <span className="">Booker Inc</span>
+                    <Store className="h-6 w-6" />
+                    <span className="">Seller Inc</span>
                 </Link>
                 <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
                     <Bell className="h-4 w-4" />

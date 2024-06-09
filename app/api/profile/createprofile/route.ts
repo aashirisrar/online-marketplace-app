@@ -19,7 +19,7 @@ export async function POST(req: Request) {
                 firstName,
                 lastName,
                 bio,
-                password: hashedPassword
+                password: hashedPassword,
                 phone
             }
         })

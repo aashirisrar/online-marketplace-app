@@ -17,16 +17,9 @@ import axios from "axios";
 import { useState, useTransition } from "react";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
 
 const formSchema = z.object({
-  email: z.string().max(21, "Enter valid email address: lXXXXXX@lhr.nu.edu.pk").min(21, "Enter valid email address: lXXXXXX@lhr.nu.edu.pk").includes("@lhr.nu.edu.pk"),
+  email: z.string(),
   userName: z.string(),
   password: z.string(),
   firstName: z.string(),
@@ -39,7 +32,6 @@ export function SignUpForm() {
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const [genderplaceholder] = useState("Select a gender");
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -162,8 +154,8 @@ export function SignUpForm() {
                   <FormControl>
                     <Input
                       disabled={isPending}
-                      type="text"
-                      placeholder="e.g lXXXXXX@lhr.nu.edu.pk"
+                      type="email"
+                      placeholder="e.g example@gmail.com"
                       {...field}
                       required
                     />

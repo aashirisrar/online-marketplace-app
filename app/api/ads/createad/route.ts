@@ -21,8 +21,8 @@ export async function POST(req: Request) {
             }
         })
 
-        // create the book
-        const createdBook = await prisma.ad.create({
+        // create the ad
+        const createdAd = await prisma.ad.create({
             data: {
                 title,
                 details,
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
         })
 
         return NextResponse.json(
-            { success: "Book Created!", book: createdBook },
+            { success: "Ad Created!", ad: createdAd },
             { status: 200 }
         );
     } catch (e) {

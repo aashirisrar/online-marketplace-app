@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default function PostComponent({
+export default function AdComponent({
   image,
   adId,
   title,

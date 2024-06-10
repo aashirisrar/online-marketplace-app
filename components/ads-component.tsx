@@ -1,14 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
-const BookComponent = ({ bookId, image, title, details, price }: any) => {
+const AdsComponent = ({ adId, image, title, details, price }: any) => {
     return (
         <Card className="mb-4">
-            <CardContent key={bookId} className="grid gap-8">
+            <CardContent key={adId} className="grid gap-8">
                 <div className="grid gap-4 grid-cols-1">
                     <div className="flex gap-5 max-sm:flex-col max-sm:items-center">
                         <div className="flex p-1">
-                            <Image className="mx-auto" src={image} width={200} height={200} alt={bookId} />
+                            <Image className="mx-auto" src={image} width={200} height={200} alt={adId} />
                         </div>
                         <div className="flex p-2">
                             <div className="flex flex-col gap-4">
@@ -30,4 +30,4 @@ const BookComponent = ({ bookId, image, title, details, price }: any) => {
     );
 };
 
-export default BookComponent;
+export default AdsComponent;

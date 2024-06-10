@@ -5,21 +5,21 @@ import axios from "axios";
 import { useParams } from "next/navigation";
 import UserProfileComponent from "@/components/user-profile";
 import { SkeletonCard } from "@/components/skeleton-card";
-import BookComponent from "@/components/book-component";
+import AdsComponent from "@/components/ads-component";
 
 export default function UserProfilePage() {
   const params = useParams();
   const [user, setUser] = useState({});
-  const [books, setBooks] = useState([]);
+  const [ads, setAds] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   async function fetchUser() {
     try {
       const response = await axios.post("/api/profile/getprofile");
       setUser(response.data.user);
-      setBooks(response.data.books);
+      setAds(response.data.ads);
     } catch (error) {
-      console.error("Error fetching book", error);
+      console.error("Error fetching ads", error);
     }
   }
 
@@ -57,8 +57,8 @@ export default function UserProfilePage() {
             </div> */}
 
         <div className="grid max-sm:mx-auto max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3 mt-[5px]">
-          {books?.map((book: any) => (
-            <BookComponent key={book.bookId} {...book} />
+          {ads?.map((ad: any) => (
+            <AdsComponent key={ad.adId} {...ad} />
           ))}
         </div>
       </div>

@@ -14,13 +14,13 @@ export default function UserProfilePage() {
 
   async function fetchUserPosts() {
     try {
-      const response = await axios.post("/api/book/getbook", {
+      const response = await axios.post("/api/ads/getad", {
         adId: params.adid,
       });
       setAds(response.data.ads);
       setUser(response.data.user);
     } catch (error) {
-      console.error("Error fetching book", error);
+      console.error("Error fetching ads", error);
     }
   }
 
@@ -38,7 +38,7 @@ export default function UserProfilePage() {
   return (
     <>
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-semibold md:text-2xl">Book Details</h1>
+        <h1 className="text-lg font-semibold md:text-2xl">Ad Details</h1>
       </div>
       <div>
         <AdPage user={user} ads={ads} />

@@ -1,9 +1,9 @@
 "use client";
 
-import { AddPost } from "@/components/add-post";
+import { CreateAd } from "@/components/create-ad";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Posts from "@/components/posts";
+import Ads from "@/components/ads";
 import { SkeletonCard } from "@/components/skeleton-card";
 
 export default function HomePage() {
@@ -36,7 +36,7 @@ export default function HomePage() {
         <h1 className="text-lg font-semibold md:text-2xl">Ads</h1>
         <div className="flex gap-x-3">
           {/* // check if user is logged in */}
-          {loggedin && <AddPost />}
+          {loggedin && <CreateAd />}
           {/* {society && <CreateEvent />} */}
         </div>
       </div>
@@ -54,7 +54,7 @@ export default function HomePage() {
               <Button className="mt-4">Add Product</Button>
             </div> */}
         <div className="mx-auto">
-          <Posts />
+          <Ads />
         </div>
       </div>
     </>

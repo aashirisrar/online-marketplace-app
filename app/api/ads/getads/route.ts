@@ -1,6 +1,5 @@
 import prisma from "@/lib/db";
 import { NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
 
 export async function POST(req: Request) {
     try {
@@ -19,21 +18,21 @@ export async function POST(req: Request) {
         //     }
         // })
 
-        // find the books
-        const fetchedBooks = await prisma.ad.findMany({});
+        // find the ads
+        const fetchedAds = await prisma.ad.findMany({});
 
         // add user details to the post who made the post
-        for (let book of fetchedBooks) {
+        for (let ad of fetchedAds) {
             const user = await prisma.user.findUnique({
                 where: {
-                    id: book.userId
+                    id: ad.userId
                 }
             });
-            book.user = user;
+            ad.user = user;
         }
 
         return NextResponse.json(
-            { success: "Books Found!", books: fetchedBooks },
+            { success: "Ads Found!", ads: fetchedAds },
             { status: 200 }
         );
     } catch (e) {

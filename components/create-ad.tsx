@@ -39,7 +39,7 @@ const formSchema = z.object({
 });
 
 
-export function AddPost() {
+export function CreateAd() {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
@@ -56,7 +56,7 @@ export function AddPost() {
     async function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values);
         try {
-            const resp = await axios.post("api/book/addbook", values);
+            const resp = await axios.post("api/ad/createad", values);
             setError(resp.data.error);
             setSuccess(resp.data.success);
             location.reload();

@@ -11,7 +11,7 @@ export async function POST(req: Request) {
             },
         })
 
-        // find the owner of book
+        // find the owner of ad
         const foundUser = await prisma.user.findUnique({
             where: {
                 id: ad?.userId

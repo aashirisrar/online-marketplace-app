@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { SkeletonCard } from "@/components/skeleton-card";
-import PostComponent from "./post-item";
+import PostComponent from "./ad-item";
 
 const ProfilePostsComponent = () => {
     const [posts, setPosts] = useState([]);

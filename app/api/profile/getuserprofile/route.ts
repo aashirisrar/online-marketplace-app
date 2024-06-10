@@ -11,14 +11,14 @@ export async function POST(req: Request) {
             }
         });
 
-        const books = await prisma.book.findMany({
+        const ads = await prisma.ad.findMany({
             where: {
                 userId: user?.id!
             }
         })
 
         return NextResponse.json(
-            { success: "User Found!", user: user, books: books },
+            { success: "User Found!", user: user, ads: ads },
             { status: 200 }
         );
     } catch (e) {

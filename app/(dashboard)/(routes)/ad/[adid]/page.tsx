@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "next/navigation";
 import { SkeletonCard } from "@/components/skeleton-card";
-import BookPage from "@/components/book-page";
+import AdPage from "@/components/ad-page";
 
 export default function UserProfilePage() {
-  const [book, setBook] = useState({});
+  const [ads, setAds] = useState({});
   const [user, setUser] = useState({});
   const params = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -15,9 +15,9 @@ export default function UserProfilePage() {
   async function fetchUserPosts() {
     try {
       const response = await axios.post("/api/book/getbook", {
-        bookId: params.bookid,
+        adId: params.adid,
       });
-      setBook(response.data.book);
+      setAds(response.data.ads);
       setUser(response.data.user);
     } catch (error) {
       console.error("Error fetching book", error);
@@ -41,7 +41,7 @@ export default function UserProfilePage() {
         <h1 className="text-lg font-semibold md:text-2xl">Book Details</h1>
       </div>
       <div>
-        <BookPage user={user} book={book} />
+        <AdPage user={user} ads={ads} />
       </div>
       {/* <div
         className="flex justify-between gap-4 rounded-lg shadow-sm"

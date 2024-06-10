@@ -22,7 +22,7 @@ export async function POST(req: Request) {
         })
 
         // create the book
-        const createdBook = await prisma.book.create({
+        const createdBook = await prisma.ad.create({
             data: {
                 title,
                 details,

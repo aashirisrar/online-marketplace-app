@@ -20,7 +20,7 @@ export async function POST(req: Request) {
             }
         });
 
-        const books = await prisma.book.findMany({
+        const books = await prisma.ad.findMany({
             where: {
                 userId: user?.id
             }

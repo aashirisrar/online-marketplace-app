@@ -77,13 +77,13 @@ export function AddPost() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="default" className="gap-x-1"><PlusCircleIcon size={18} />  Add New Book</Button>
+                <Button variant="default" className="gap-x-1"><PlusCircleIcon size={18} />  Create Ad</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                    <DialogTitle>Add New Book</DialogTitle>
+                    <DialogTitle>Create New Ad</DialogTitle>
                     <DialogDescription>
-                        Add your details for book.
+                        Add your details for your ad.
                     </DialogDescription>
                 </DialogHeader>
                 <div className="grid py-1">
@@ -97,7 +97,7 @@ export function AddPost() {
                                         <FormLabel>Title:</FormLabel>
                                         <FormControl>
                                             <Input
-                                                placeholder="e.g The Alchemist"
+                                                placeholder="e.g Samsung Watch 3"
                                                 className="col-span-3"
                                                 {...field}
                                                 required
@@ -115,7 +115,7 @@ export function AddPost() {
                                         <FormLabel>Details:</FormLabel>
                                         <FormControl>
                                             <Textarea
-                                                placeholder="e.g The Alchemist is a novel"
+                                                placeholder="e.g Brand New"
                                                 className="col-span-3"
                                                 {...field}
                                                 required
@@ -167,7 +167,7 @@ export function AddPost() {
                             </div>
                             <FormSuccess message={success} />
                             <div className="flex justify-end">
-                                <Button type="submit">Add Book</Button>
+                                <Button type="submit">Create Ad</Button>
                             </div>
                         </form>
                     </Form>

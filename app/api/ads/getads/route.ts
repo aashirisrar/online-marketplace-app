@@ -20,7 +20,7 @@ export async function POST(req: Request) {
         // })
 
         // find the books
-        const fetchedBooks = await prisma.book.findMany({});
+        const fetchedBooks = await prisma.ad.findMany({});
 
         // add user details to the post who made the post
         for (let book of fetchedBooks) {

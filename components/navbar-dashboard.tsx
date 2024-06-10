@@ -26,6 +26,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { routes } from "./sidebar-dashboard";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import { ModeToggle } from "./mode-toggle";
 
 
 const NavbarDashboard = () => {
@@ -115,6 +116,7 @@ const NavbarDashboard = () => {
                     </div>
                 </form>
             </div>
+            <ModeToggle />
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     {

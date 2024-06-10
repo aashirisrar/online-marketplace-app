@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
 
         // update the user's profile
-        const foundPosts = await prisma.post.findMany({
+        const foundPosts = await prisma.ad.findMany({
             where: {
                 userId: foundUser?.id
             },

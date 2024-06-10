@@ -1,15 +1,11 @@
-import { LucideMenu, MessageCircle } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import LikeComponent from "@/components/like";
 import Link from "next/link";
 
 export default function PostComponent({
   image,
-  bookId,
+  adId,
   title,
   details,
   price
@@ -57,7 +53,7 @@ export default function PostComponent({
               className="w-full"
               style={{ objectFit: "contain" }}
               height={400}
-              alt={bookId}
+              alt={adId}
               src={image}
             />
           </div>
@@ -66,8 +62,8 @@ export default function PostComponent({
         </div>
         <div className="flex gap-2">
           <div className="w-full">
-            <Link href={"/book/" + bookId}>
-              <Button className="w-full">View Book</Button>
+            <Link href={"/ad/" + adId}>
+              <Button className="w-full">View</Button>
             </Link>
           </div>
         </div>

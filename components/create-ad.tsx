@@ -56,7 +56,7 @@ export function CreateAd() {
     async function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values);
         try {
-            const resp = await axios.post("api/ad/createad", values);
+            const resp = await axios.post("api/ads/createad", values);
             setError(resp.data.error);
             setSuccess(resp.data.success);
             location.reload();

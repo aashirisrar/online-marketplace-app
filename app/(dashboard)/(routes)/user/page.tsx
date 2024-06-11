@@ -5,7 +5,7 @@ import axios from "axios";
 import { useParams } from "next/navigation";
 import UserProfileComponent from "@/components/user-profile";
 import { SkeletonCard } from "@/components/skeleton-card";
-import AdsComponent from "@/components/ads-component";
+import AdsComponentUserPage from "@/components/ads-component-user-page";
 
 export default function UserProfilePage() {
   const params = useParams();
@@ -56,9 +56,9 @@ export default function UserProfilePage() {
               <Button className="mt-4">Add Product</Button>
             </div> */}
 
-        <div className="grid max-sm:mx-auto max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3 mt-[5px]">
+        <div className="grid max-sm:mx-auto max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-3 mt-[5px] gap-2">
           {ads?.map((ad: any) => (
-            <AdsComponent key={ad.adId} {...ad} />
+            <AdsComponentUserPage key={ad.adId} {...ad} />
           ))}
         </div>
       </div>

@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import axios from "axios";
 import { Trash2 } from "lucide-react";
 import Image from "next/image";
+import Router from "next/router";
 
 const AdsComponentUserPage = ({ adId, image, title, details, price }: any) => {
 
@@ -10,6 +11,7 @@ const AdsComponentUserPage = ({ adId, image, title, details, price }: any) => {
             const response = await axios.post("/api/ads/deletead", { adId });
         } catch (error) {
             console.error("Error deleting ad", error);
+            Router.reload();
         }
     }
 

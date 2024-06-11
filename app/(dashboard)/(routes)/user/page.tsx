@@ -36,17 +36,19 @@ export default function UserProfilePage() {
 
   return (
     <>
-      <div className="flex items-center justify-between">
-        <h1 className="text-lg font-semibold md:text-2xl">User Details</h1>
-      </div>
-      <div>
-        <UserProfileComponent user={user} />
-      </div>
-      <div
-        className="flex justify-between gap-4 rounded-lg shadow-sm"
-        x-chunk="dashboard-02-chunk-1"
-      >
-        {/* <div className="flex flex-col items-center gap-1 text-center">
+      {ads ?
+        <div>
+          <div className="flex items-center justify-between">
+            <h1 className="text-lg font-semibold md:text-2xl">User Details</h1>
+          </div>
+          <div className="mt-2">
+            <UserProfileComponent user={user} />
+          </div>
+          <div
+            className="flex justify-between gap-4 rounded-lg shadow-sm"
+            x-chunk="dashboard-02-chunk-1"
+          >
+            {/* <div className="flex flex-col items-center gap-1 text-center">
               <h3 className="text-2xl font-bold tracking-tight">
                 You have no products
               </h3>
@@ -55,13 +57,15 @@ export default function UserProfilePage() {
               </p>
               <Button className="mt-4">Add Product</Button>
             </div> */}
+            <div className="grid max-sm:mx-auto max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-3 mt-[5px] gap-2">
+              {ads?.map((ad: any) => (
+                <AdsComponentUserPage key={ad.adId} {...ad} />
+              ))}
+            </div>
+          </div>
+        </div> :
+        <div>Not logged In</div>}
 
-        <div className="grid max-sm:mx-auto max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-3 mt-[5px] gap-2">
-          {ads?.map((ad: any) => (
-            <AdsComponentUserPage key={ad.adId} {...ad} />
-          ))}
-        </div>
-      </div>
     </>
   );
 }

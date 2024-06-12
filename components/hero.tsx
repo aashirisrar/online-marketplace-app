@@ -60,7 +60,7 @@ const Hero = () => {
       </div>
       <div className="flex flex-1 items-center justify-center">
         <div className="w-[30rem] h-[30rem]">
-          <Image width={250} height={250} alt="hero-img" className="h-full w-full object-cover" src="/hero.jpg" />
+          <Image width={450} height={450} alt="hero-img" className="h-full w-full object-cover" src="/hero.jpg" />
         </div>
       </div>
     </section>

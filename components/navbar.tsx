@@ -88,7 +88,7 @@ export function MainNavigationMenu() {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/sign-in" legacyBehavior passHref>
+                  <Link href="/home" legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Explore
                     </NavigationMenuLink>

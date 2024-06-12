@@ -1,26 +1,15 @@
-import React from 'react'
-import { Cta, Navbar, Brand } from '@/components/index'
-import { Footer, Blog, Header, Possibility, Whatgpt3, Features } from '@/components/Landingcomps/index'
-import './App.css'
-const Home = () => {
+import { MainNavigationMenu } from "@/components/navbar";
+import Hero from "@/components/hero";
+
+export default function Home() {
   return (
-
-    <div className='App bg-[#040C18]'>
-      <div className='gradient__bg'>
-        <Navbar />
-        <Header />
-      </div>
-      <Brand />
-      <Whatgpt3 />
-      <Features />
-      <Possibility />
-
-      <Cta />
-      <Blog />
-      <Footer />
+    <div className="relative flex min-h-screen flex-col bg-background">
+      <MainNavigationMenu />
+      <main className="flex-1">
+        <div className="container relative">
+          <Hero />
+        </div>
+      </main>
     </div>
-  )
+  );
 }
-
-export default Home
-

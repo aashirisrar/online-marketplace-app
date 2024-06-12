@@ -14,7 +14,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "./mode-toggle";
-import { Box } from "lucide-react";
+import { Store } from "lucide-react";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -59,8 +59,8 @@ export function MainNavigationMenu() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <a className="mr-6 flex items-center space-x-2" href="/">
-          <Box />
-          <span className="hidden font-bold sm:inline-block">Temperature</span>
+          <Store />
+          <span className="hidden font-bold sm:inline-block">Seller Inc</span>
         </a>
         <nav>
           <NavigationMenu>

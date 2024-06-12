@@ -9,9 +9,9 @@ const AdsComponentUserPage = ({ adId, image, title, details, price }: any) => {
     async function deleteAd() {
         try {
             const response = await axios.post("/api/ads/deletead", { adId });
+            Router.reload();
         } catch (error) {
             console.error("Error deleting ad", error);
-            Router.reload();
         }
     }
 

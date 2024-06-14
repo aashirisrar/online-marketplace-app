@@ -4,6 +4,8 @@ import KeyFeatures from "@/components/key-features";
 import Confidence from "@/components/confidence";
 import Discover from "@/components/discover";
 import Testimonials from "@/components/testimonials";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
           <Confidence />
           <Discover />
           <Testimonials />
+          <Contact />
+          <Footer />
         </div>
       </main>
     </div>

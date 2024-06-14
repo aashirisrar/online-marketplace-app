@@ -6,11 +6,11 @@ const Testimonials = () => {
     return (
         <section className="mx-auto flex flex-col gap-8 items-center justify-between py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
             <div className='flex gap-1'>
-                <div><Star fill='white' /></div>
-                <div><Star fill='white' /></div>
-                <div><Star fill='white' /></div>
-                <div><Star fill='white' /></div>
-                <div><Star fill='white' /></div>
+                <div><Star /></div>
+                <div><Star /></div>
+                <div><Star /></div>
+                <div><Star /></div>
+                <div><Star /></div>
             </div>
             <div className='text-lg font-semibold'>The app is amazing! It has made buying and selling so much easier for me.
             </div>
